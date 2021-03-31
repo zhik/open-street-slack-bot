@@ -3,18 +3,34 @@ import datetime
 
 class Weather():
     def __init__(self, latlng):
-        forecastHourlyUrl = requests.get(f'https://api.weather.gov/points/{latlng}').json()['properties']['forecastHourly']
-        self.forecast = requests.get(forecastHourlyUrl).json()
-        self.periods = self.forecast['properties']['periods']
+        forecastUrls = requests.get(f'https://api.weather.gov/points/{latlng}').json()['properties']
+        
+        
+        self.dailyForecast = requests.get(forecastUrls['forecast']).json()
+        self.dailyPeriods = self.dailyForecast['properties']['periods']
+        self.hourlyForecast = requests.get(forecastUrls['forecastHourly']).json()
+        self.hourlyPeriods = self.hourlyForecast['properties']['periods']
 
-
+    def getSummary(self, date):
+        matches = []
+        for period in self.dailyPeriods:
+            d = datetime.datetime.fromisoformat(period['startTime']).replace(tzinfo=None).date()
+            if d == date:
+                matches.append(period)
+        
+        if matches:
+            return '\n'.join([f"{match['name']}: {match['detailedForecast']}" for match in matches])
+        else:
+            return ''
+        
     def getForcast(self, dt):
         #match dt with a period and return string
         match = None
-        for period in self.periods:
+        for period in self.hourlyPeriods:
             t = datetime.datetime.fromisoformat(period['startTime']).replace(tzinfo=None)
             if t == dt:
                 match = period
+                break
 
         if match:
             return f"{match['temperature']}F. {match['shortForecast']} ({match['windSpeed']})"
@@ -27,6 +43,9 @@ def main():
     night = datetime.datetime.combine(datetime.date.today(), datetime.time(20, 0))
     weatherNight = weather.getForcast(night)
     print(weatherNight)
+
+    summary = weather.getSummary(datetime.date.today())
+    print(summary) 
 
 if __name__ == "__main__":
     main()

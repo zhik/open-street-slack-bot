@@ -60,6 +60,7 @@ def post(client, defaultChannel, date, now):
     night = datetime.datetime.combine(date, datetime.time(20, 0))
     weatherDay = weather.getForcast(day)
     weatherNight = weather.getForcast(night)
+    weatherSummary = weather.getSummary(date)
 
     # check of cancellation
     typesOfCancellation = ('snow', 'wind', 'rain', 'storm')
@@ -73,6 +74,13 @@ def post(client, defaultChannel, date, now):
                         'type': 'mrkdwn',
                         'text': f"Good evening! Barriers are on hold for tomorrow ({date.strftime('%a %-m/%-d')}) due to `{signup['39th-day'].split(',')[0]}`."
                     }
+                },
+                {
+                    'type': 'context',
+                    'elements': [{
+                        'type': 'mrkdwn',
+                        'text':  weatherSummary
+                    }]
                 },
                 {
                     'type': 'context',
@@ -130,8 +138,15 @@ def post(client, defaultChannel, date, now):
                     'type': 'section',
                     'text': {
                         'type': 'mrkdwn',
-                        'text': f"Good evening! The barrier budd(ies) for tommorow ({date.strftime('%a %-m/%-d')}) are:"
+                        'text': f"Good evening! The weather and barrier budd(ies) for tommorow ({date.strftime('%a %-m/%-d')}) are:"
                     }
+                },
+                {
+                    'type': 'context',
+                    'elements': [{
+                        'type': 'mrkdwn',
+                        'text':  weatherSummary
+                    }]
                 },
                 {
                     'type': 'context',
