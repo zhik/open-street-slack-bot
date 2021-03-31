@@ -1,0 +1,5 @@
+osbot-env
+.vscode
+.env
+
+delete.py
