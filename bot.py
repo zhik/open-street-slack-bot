@@ -262,11 +262,11 @@ def post(client, defaultChannel, date, now):
             # You will get a SlackApiError if "ok" is False
             assert e.response["error"]    # str like 'invalid_auth', 'channel_not_found'
 
-
     #save ts and currentUpdateTime
     ts=response.data['ts']
     channel = response.data['channel']
-
+    print(ts)
+    
     with open('ts.txt', 'w') as file:
         file.write(ts)
         file.write('\n')
