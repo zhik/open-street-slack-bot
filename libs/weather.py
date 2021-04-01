@@ -5,11 +5,18 @@ class Weather():
     def __init__(self, latlng):
         forecastUrls = requests.get(f'https://api.weather.gov/points/{latlng}').json()['properties']
         
-        
-        self.dailyForecast = requests.get(forecastUrls['forecast']).json()
-        self.dailyPeriods = self.dailyForecast['properties']['periods']
-        self.hourlyForecast = requests.get(forecastUrls['forecastHourly']).json()
-        self.hourlyPeriods = self.hourlyForecast['properties']['periods']
+        try:
+            self.dailyForecast = requests.get(forecastUrls['forecast']).json()
+            self.dailyPeriods = self.dailyForecast['properties']['periods']
+        except:
+            self.dailyPeriods = []
+
+        try:
+            self.hourlyForecast = requests.get(forecastUrls['forecastHourly']).json()
+            self.hourlyPeriods = self.hourlyForecast['properties']['periods']
+        except:
+            self.hourlyPeriods = []
+
 
     def getSummary(self, date):
         matches = []
