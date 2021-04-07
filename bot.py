@@ -58,8 +58,8 @@ def post(client, defaultChannel, date, now):
 
     day = datetime.datetime.combine(date, datetime.time(8, 0))
     night = datetime.datetime.combine(date, datetime.time(20, 0))
-    weatherDay = weather.getForcast(day)
-    weatherNight = weather.getForcast(night)
+    weatherDay = weather.getForecast(day)
+    weatherNight = weather.getForecast(night)
     weatherSummary = weather.getSummary(date)
 
     # check of cancellation

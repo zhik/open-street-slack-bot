@@ -30,7 +30,7 @@ class Weather():
         else:
             return ''
         
-    def getForcast(self, dt):
+    def getForecast(self, dt):
         #match dt with a period and return string
         match = None
         for period in self.hourlyPeriods:
@@ -42,13 +42,13 @@ class Weather():
         if match:
             return f"{match['temperature']}F. {match['shortForecast']} ({match['windSpeed']})"
         else: 
-            return '<https://www.wunderground.com/hourly/us/ny/new-york-city/KNYNEWYO806|forcast>'
+            return '<https://www.wunderground.com/hourly/us/ny/new-york-city/KNYNEWYO806|forecast here>'
 
 
 def main():
     weather = Weather('40.7459,-73.9239')
     night = datetime.datetime.combine(datetime.date.today(), datetime.time(20, 0))
-    weatherNight = weather.getForcast(night)
+    weatherNight = weather.getForecast(night)
     print(weatherNight)
 
     summary = weather.getSummary(datetime.date.today())
