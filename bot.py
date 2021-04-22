@@ -226,7 +226,7 @@ def post(client, defaultChannel, date, now):
             ]
         }
 
-
+    print(message)
     #check `ts.text` to see if message has to be updated or new post is needed
     response = None
     try:
