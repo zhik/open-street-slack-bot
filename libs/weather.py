@@ -28,7 +28,7 @@ class Weather():
         if matches:
             return '\n'.join([f"{match['name']}: {match['detailedForecast']}" for match in matches])
         else:
-            return ''
+            return '-'
         
     def getForecast(self, dt):
         #match dt with a period and return string
