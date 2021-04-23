@@ -72,7 +72,7 @@ def post(client, defaultChannel, date, now):
                     'type': 'section',
                     'text': {
                         'type': 'mrkdwn',
-                        'text': f"Good evening! Barriers are on hold for tomorrow ({date.strftime('%a %-m/%-d')}) due to `{signup['39th-day'].split(',')[0]}`."
+                        'text': f"Good evening! Barriers are on hold for *tomorrow ({date.strftime('%a %-m/%-d')})* due to `{signup['39th-day'].split(',')[0]}`."
                     }
                 },
                 {
@@ -86,9 +86,9 @@ def post(client, defaultChannel, date, now):
                     'type': 'context',
                     'elements': [{
                         'type': 'mrkdwn',
-                        'text': f"Update the schedule <https://docs.google.com/spreadsheets/d/1-F81Ccr0jJxCaKKsttvSRBJyvmar08G2Q1YGomY1AeU/edit?usp=sharing|here>. {currentUpdateTime}"
+                        'text': f"*UPDATE SCHEDULE <https://docs.google.com/spreadsheets/d/1-F81Ccr0jJxCaKKsttvSRBJyvmar08G2Q1YGomY1AeU/edit?usp=sharing|HERE>*. Post last updated on {currentUpdateTime}"
                     }]
-                },
+                }
             ],
             'attachments': [
                 {
@@ -98,7 +98,7 @@ def post(client, defaultChannel, date, now):
                             'type': 'section',
                             'text': {
                                 'type': 'mrkdwn',
-                                'text': "*8AM*"
+                                'text': f"*8AM* - {date.strftime('%a %-m/%-d')}"
                             }
                         },
                         {
@@ -138,7 +138,7 @@ def post(client, defaultChannel, date, now):
                     'type': 'section',
                     'text': {
                         'type': 'mrkdwn',
-                        'text': f"Good evening! The weather and barrier budd(ies) for tommorow ({date.strftime('%a %-m/%-d')}) are:"
+                        'text': f"Good evening! The weather and barrier budd(ies) for *tommorow ({date.strftime('%a %-m/%-d')})* are:"
                     }
                 },
                 {
@@ -152,9 +152,9 @@ def post(client, defaultChannel, date, now):
                     'type': 'context',
                     'elements': [{
                         'type': 'mrkdwn',
-                        'text': f"Update the schedule <https://docs.google.com/spreadsheets/d/1-F81Ccr0jJxCaKKsttvSRBJyvmar08G2Q1YGomY1AeU/edit?usp=sharing|here>. {currentUpdateTime}"
+                        'text': f"*UPDATE SCHEDULE <https://docs.google.com/spreadsheets/d/1-F81Ccr0jJxCaKKsttvSRBJyvmar08G2Q1YGomY1AeU/edit?usp=sharing|HERE>*. Post last updated on {currentUpdateTime}"
                     }]
-                },
+                }
             ],
             'attachments': [
                 {
@@ -164,7 +164,7 @@ def post(client, defaultChannel, date, now):
                             'type': 'section',
                             'text': {
                                 'type': 'mrkdwn',
-                                'text': "*8AM*"
+                                'text': f"*8AM* - {date.strftime('%a %-m/%-d')}"
                             }
                         },
                         {
