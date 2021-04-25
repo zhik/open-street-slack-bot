@@ -64,7 +64,7 @@ def post(client, defaultChannel, date, now):
 
     # check of cancellation
     typesOfCancellation = ('snow', 'wind', 'rain', 'storm')
-    if any([i == signup['39th-day'].lower() for i in typesOfCancellation]):
+    if any([i == signup['39th-day'].lower() or f'*{i}*' == signup['39th-day'].lower() for i in typesOfCancellation]):
         # build message
         message = {
             'blocks': [
