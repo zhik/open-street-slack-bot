@@ -36,10 +36,10 @@ def getBuddiesFromSheets(today):
                 signupSkillmanNight = ', '.join(i for i in row[10:] if i)
                 break
 
-    defaultRequest = '`Need volunteer(s) :(`'
+    defaultRequest = '`Help!`'
     return {
-        '39th-day': f'*{signup39thDay}*' if signup39thDay else defaultRequest,
-        '39th-night': f'*{signup39thNight}*' if signup39thNight else defaultRequest,
+        '39th-day': f'*{signup39thDay}*' if signup39thDay else '`39 Av 24/7`',
+        '39th-night': f'*{signup39thNight}*' if signup39thNight else '`39 Av 24/7`',
         'skillman-day': f'*{signupSkillmanDay}*' if signupSkillmanDay else defaultRequest,
         'skillman-night': f'*{signupSkillmanNight}*' if signupSkillmanNight else defaultRequest
     }
