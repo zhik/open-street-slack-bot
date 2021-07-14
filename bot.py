@@ -178,13 +178,6 @@ def post(client, defaultChannel, date, now):
                             'type': 'section',
                             'text': {
                                 'type': 'mrkdwn',
-                                'text': f":three::nine:th Ave: {signup['39th-day']}"
-                            }
-                        },
-                        {
-                            'type': 'section',
-                            'text': {
-                                'type': 'mrkdwn',
                                 'text': f":deciduous_tree: Skillman Ave: {signup['skillman-day']}"
                             }
                         }
@@ -206,13 +199,6 @@ def post(client, defaultChannel, date, now):
                                 'type': 'mrkdwn',
                                 'text': weatherNight
                             }]
-                        },
-                        {
-                            'type': 'section',
-                            'text': {
-                                'type': 'mrkdwn',
-                                'text': f":three::nine:th Ave: {signup['39th-night']}"
-                            }
                         },
                         {
                             'type': 'section',
