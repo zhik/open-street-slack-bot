@@ -269,9 +269,9 @@ def main():
     now = datetime.datetime.now()
     tomorrow = datetime.date.today() + datetime.timedelta(days=1)
 
-    #do not run between the hours of 11pm - 5am
-    if now.hour >= 23 or now.hour <= 5:
-        return 0
+    # #do not run between the hours of 11pm - 5am
+    # if now.hour >= 23 or now.hour <= 5:
+    #     return 0
 
     # if time is after 6pm post for tomorrow
     if now.hour >= 18:
