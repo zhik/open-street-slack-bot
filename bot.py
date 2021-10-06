@@ -1,4 +1,5 @@
 from libs.weather import Weather
+from libs.sunrise import SunriseSunset
 import os
 import datetime
 import csv
@@ -48,6 +49,7 @@ def getBuddiesFromSheets(today):
 def post(client, defaultChannel, date, now):
     # init weather
     weather = Weather('40.7459,-73.9239')
+    sunriseSunset = SunriseSunset(40.7459,-73.9239)
 
    # init time 
     now = datetime.datetime.now()
@@ -80,6 +82,13 @@ def post(client, defaultChannel, date, now):
                     'elements': [{
                         'type': 'mrkdwn',
                         'text':  weatherSummary
+                    }]
+                },
+                {
+                    'type': 'context',
+                    'elements': [{
+                        'type': 'mrkdwn',
+                        'text':  f':sunrise: @{sunriseSunset.sunriseString} and :city_sunset: @{sunriseSunset.sunsetString}'
                     }]
                 },
                 {
@@ -146,6 +155,13 @@ def post(client, defaultChannel, date, now):
                     'elements': [{
                         'type': 'mrkdwn',
                         'text':  weatherSummary
+                    }]
+                },
+                {
+                    'type': 'context',
+                    'elements': [{
+                        'type': 'mrkdwn',
+                        'text':  f':sunrise:@ {sunriseSunset.sunriseString} and :city_sunset: @{sunriseSunset.sunsetString}'
                     }]
                 },
                 {
