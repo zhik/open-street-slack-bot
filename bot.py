@@ -126,7 +126,7 @@ def post(client, defaultChannel, date, now):
                             'type': 'section',
                             'text': {
                                 'type': 'mrkdwn',
-                                'text': "*8PM*"
+                                'text': "*6PM*"
                             }
                         },
                         {
@@ -206,7 +206,7 @@ def post(client, defaultChannel, date, now):
                             'type': 'section',
                             'text': {
                                 'type': 'mrkdwn',
-                                'text': "*8PM*"
+                                'text': "*6PM*"
                             }
                         },
                         {
