@@ -15,7 +15,7 @@ os.environ['TZ'] = 'US/Eastern'
 time.tzset()
 
 def getBuddiesFromSheets(today):
-    CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRm7akE9u9jQhN6XnmkRdwPwwrmd7PDXDdMRQ292H55UdE9DX-3LrLwLt4lyRxWcdjWHM5fZSPUtinv/pub?gid=1167005596&single=true&output=csv'
+    CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTDgKOatKjMvP7cd8gB9Qs0fSLhIbWaEYFIgHxKM6kRvzW160JaK3bD12oBblpuOFcrVU4dlsRbOMg9/pub?gid=1945010530&single=true&output=csv'
     signup39thDay = None
     signup39thNight = None
     signupSkillmanDay = None
@@ -31,10 +31,10 @@ def getBuddiesFromSheets(today):
         for row in my_list:
             date = row[1] + row[2]
             if date == today.strftime("%-m/%-d"):
-                signup39thDay = ', '.join(i for i in row[3:5] if i)
-                signup39thNight = ', '.join(i for i in row[5:7] if i)
-                signupSkillmanDay = ', '.join(i for i in row[8:10] if i)
-                signupSkillmanNight = ', '.join(i for i in row[10:] if i)
+                signup39thDay = ', '.join(i for i in row[4:5] if i)
+                signup39thNight = ', '.join(i for i in row[5:] if i)
+                signupSkillmanDay = ', '.join(i for i in row[4:5] if i)
+                signupSkillmanNight = ', '.join(i for i in row[5:] if i)
                 break
 
     defaultRequest = '`Help!`'
