@@ -31,10 +31,10 @@ def getBuddiesFromSheets(today):
         for row in my_list:
             date = row[1] + row[2]
             if date == today.strftime("%-m/%-d"):
-                signup39thDay = ', '.join(i for i in row[4:5] if i)
-                signup39thNight = ', '.join(i for i in row[5:] if i)
-                signupSkillmanDay = ', '.join(i for i in row[4:5] if i)
-                signupSkillmanNight = ', '.join(i for i in row[5:] if i)
+                signup39thDay = ', '.join(i for i in row[3:4] if i)
+                signup39thNight = ', '.join(i for i in row[4:] if i)
+                signupSkillmanDay = ', '.join(i for i in row[3:4] if i)
+                signupSkillmanNight = ', '.join(i for i in row[4:] if i)
                 break
 
     defaultRequest = '`Help!`'
@@ -95,7 +95,7 @@ def post(client, defaultChannel, date, now):
                     'type': 'context',
                     'elements': [{
                         'type': 'mrkdwn',
-                        'text': f"*UPDATE SCHEDULE <https://docs.google.com/spreadsheets/d/1-F81Ccr0jJxCaKKsttvSRBJyvmar08G2Q1YGomY1AeU/edit?usp=sharing|HERE>*. Post last updated on {currentUpdateTime}"
+                        'text': f"*UPDATE SCHEDULE <https://docs.google.com/spreadsheets/d/1XFVFb046fysxDt9LNwdD88zYbQiRafHwWOcTmEex2c8/edit?usp=sharing|HERE>*. Post last updated on {currentUpdateTime}"
                     }]
                 }
             ],
@@ -168,7 +168,7 @@ def post(client, defaultChannel, date, now):
                     'type': 'context',
                     'elements': [{
                         'type': 'mrkdwn',
-                        'text': f"*UPDATE SCHEDULE <https://docs.google.com/spreadsheets/d/1-F81Ccr0jJxCaKKsttvSRBJyvmar08G2Q1YGomY1AeU/edit?usp=sharing|HERE>*. Post last updated on {currentUpdateTime}"
+                        'text': f"*UPDATE SCHEDULE <https://docs.google.com/spreadsheets/d/1XFVFb046fysxDt9LNwdD88zYbQiRafHwWOcTmEex2c8/edit?usp=sharing|HERE>*. Post last updated on {currentUpdateTime}"
                     }]
                 }
             ],
