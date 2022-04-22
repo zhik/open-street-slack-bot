@@ -9,11 +9,9 @@ class SunriseSunset():
         self.sunsetString = '' 
 
         print(url)
-
-        data = requests.get(url, verify=False).json()['results']
-        
         try:
-
+            data = requests.get(url, verify=False).json()['results']
+        
             #convert from datetime utc to nyc time
             sunrise = datetime.datetime.fromisoformat(data['sunrise']).replace(tzinfo=datetime.timezone.utc)
             sunset =  datetime.datetime.fromisoformat(data['sunset']).replace(tzinfo=datetime.timezone.utc)
