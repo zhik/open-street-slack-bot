@@ -10,7 +10,7 @@ class SunriseSunset():
 
         print(url)
 
-        data = requests.get(url, verify=False).json()['results']
+        data = requests.get(url).json()['results']
         
         try:
 
